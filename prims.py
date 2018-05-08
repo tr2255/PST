@@ -10,16 +10,14 @@ import functions as P
 
 V = G.vertex_set()
 
-def Prims(Graph,Initial_Vertex):
-    
-    #initilization, tuples
+def Prims(Graph,Initial_Vertex)
     VT = {Initial_Vertex} 
     ET = [] 
     MST = (VT, ET) 
     
     cost_min_edge=P.cost(G,P.min_incident_edge(G,MST))
     
-    '''PRIMS ALGORITHM'''
+    ###PRIMS ALGORITHM###
     while MST[0] != V:
         min_edge = P.min_incident_edge(G,MST)
         new_vertex = {min_edge[0], min_edge[1]}
