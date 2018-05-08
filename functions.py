@@ -1,16 +1,9 @@
 # -*- coding: utf-8 -*-
 """
-Created on Sat May  5 14:31:22 2018
+Created on Sat April 28 14:31:22 2018
 
 @author: Adalberto
 """
-
-
-from Weighted_Graph import *
-
-G = Weighted_Graph('testgraph.txt')
-
-G.draw_graph()
 
 def cost(G, e): #Determines the cost for Edges
     return G.edge_dict()[e]
@@ -35,10 +28,10 @@ def valid_incident_edges(G, T):
     return temp_edges
    
 def min_incident_edge(G, T):
-    temp_edges = incident_edges(G,T)
+    temp_edges = valid_incident_edges(G,T)
     min_edge = temp_edges[0]
     
     for e in temp_edges:
         if cost(G,e) < cost(G, min_edge):
             min_edge = e
-        return min_edge
+    return min_edge
